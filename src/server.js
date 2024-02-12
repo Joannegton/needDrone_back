@@ -28,3 +28,5 @@ app.use(transactionRouter)
 
 const port = 5000;
 app.listen(port, () => console.log(`Server listening in port ${port}`));
+
+export default app
