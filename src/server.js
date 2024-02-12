@@ -3,24 +3,26 @@ import cors from "cors";
 
 import { connectDb } from "./config/database.js";
 import authRouter from "./routes/authRoutes.js";
-import criarPilotoRouter from "./routes/pilotoRoute.js";
+import PilotoRouter from "./routes/pilotoRoute.js";
 import transactionRouter from "./routes/transactionRoutes.js";
-import criarClienteRouter from "./routes/clienteRoute.js";
+import ClienteRouter from "./routes/clienteRoute.js";
 import projetoRouter from "./routes/ProjetosRoutes.js";
-import criarComentarioRouter from "./routes/comentarioRoute.js";
+import ComentarioRouter from "./routes/comentarioRoute.js";
 import droneRouter from "./routes/droneRoute.js";
 import propostaRouter from "./routes/propostaRoute.js";
+import ImagemRouter from "./routes/imagensRoute.js";
 const app = express();
 
 connectDb();
 app.use(json());
 app.use(cors());
 app.use(authRouter);
-app.use(criarComentarioRouter)
+app.use(ComentarioRouter)
 app.use(projetoRouter)
 app.use(droneRouter)
-app.use(criarPilotoRouter)
-app.use(criarClienteRouter)
+app.use(ImagemRouter)
+app.use(PilotoRouter)
+app.use(ClienteRouter)
 app.use(propostaRouter)
 
 app.use(transactionRouter)

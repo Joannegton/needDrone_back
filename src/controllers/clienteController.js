@@ -44,4 +44,6 @@ async function update(req, res) {
   }
 }
 
+
+
 export default {criarCliente, findAllUser, findById, update}
