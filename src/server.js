@@ -23,10 +23,10 @@ connectDb();
 app.use(json());
 app.use(cors());
 app.use(authRouter);
+app.use(ImagemRouter)
 app.use(ComentarioRouter)
 app.use(projetoRouter)
 app.use(droneRouter)
-app.use(ImagemRouter)
 app.use(PilotoRouter)
 app.use(ClienteRouter)
 app.use(propostaRouter)
