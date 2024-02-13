@@ -5,9 +5,9 @@ import fs from 'fs';
 // Função de upload de imagem
 async function uploadImage(req, res) {
   try {
-    const id = req.params;
+    const {_id} = req.params;
     const fileUrl = `${req.protocol}://${req.get('host')}/uploads/${req.file.filename}`;
-    await imagensService(id, fileUrl);
+    await imagensService(_id, fileUrl);
     res.send({ fileUrl });
   } catch (error) {
     console.error('Error uploading file:', error);
