@@ -1,10 +1,12 @@
 import { Router } from "express";
 import upload from '../middlewares/multerConfig.js';
-import uploadImage from "../controllers/imagensControler.js";
+import imagensControler from "../controllers/imagensControler.js";
 
 
 const ImagemRouter = Router()
 
-ImagemRouter.post('/cliente/upload/:_id', upload.single('file'), uploadImage)
+ImagemRouter.get('/uploads/:filename', imagensControler.serveFile )
+
+ImagemRouter.post('/cliente/upload/:_id', upload.single('file'), imagensControler.uploadImage)
 
 export default ImagemRouter
