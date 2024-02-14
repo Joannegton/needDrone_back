@@ -9,5 +9,7 @@ export const CreateProjeto = Joi.object({
     imgsubposition: Joi.boolean(),
     deadline: Joi.date().required(),
     userId: Joi.object(),
-    createdAt: Joi.string()
+    createdAt: Joi.string(),
+    localization: Joi.string(),
+    budget: Joi.number()
 })

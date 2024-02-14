@@ -15,7 +15,6 @@ const ProjetoSchema = new Schema({
     userAvaliacao: { type: Number },
     status: { type: String }, // Estado da ordem de projeto
     aceitouOrdemPor: { type: Schema.Types.ObjectId, ref: "pilotoUsers" },
-    valor: { type: Number }, // Valor da prestação de serviço
     outrasInformacoes: { type: String }, // Outras informações relevantes
     created_at: { type: Date, default: Date.now() },
 });
