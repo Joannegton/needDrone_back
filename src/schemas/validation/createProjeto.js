@@ -11,5 +11,4 @@ export const CreateProjeto = Joi.object({
     userId: Joi.object(),
     createdAt: Joi.string(),
     localization: Joi.string(),
-    budget: Joi.number()
 })
