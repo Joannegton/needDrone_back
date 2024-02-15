@@ -3,7 +3,8 @@ import { Schema, model } from 'mongoose';
 const PropostaSchema = new Schema({
   projectId: { type: Schema.Types.ObjectId, ref: 'projeto', required: true },
   tituloProjeto: { type: String},
-  criadorProjeto: { type: String },
+  IdCriadorProjeto: { type: String },
+  NomeCriadorProjeto: { type: String },
   enviadorProposta: { type: Schema.Types.ObjectId, ref: 'Piloto' },
   ofertaInicial: { type: String, required: true },
   ofertaFinal: { type: String, required: true },
@@ -20,7 +21,8 @@ PropostaSchema.pre('save', async function (next) {
             throw new Error('User not found');
         }
         this.tituloProjeto = projeto.title;
-        this.criadorProjeto = projeto.userName;
+        this.nomeCriadorProjeto = projeto.userName;
+        this.IdCriadorProjeto = projeto.userId;
         this.status = projeto.status;
         // Preencher informações adicionais, se necessário
         next();
