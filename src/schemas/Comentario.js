@@ -1,6 +1,7 @@
 import {Schema, model} from 'mongoose'
 
 const ComentarioSchema = new Schema({
+    nameCliente: {type: String},
     pilotoId: { type: Schema.Types.ObjectId, ref: 'pilotoUsers', required: true },
     clienteId: { type: Schema.Types.ObjectId, ref: 'clienteUsers', required: true },
     avaliacao: { type: Number, required: true },
@@ -18,6 +19,7 @@ ComentarioSchema.pre('save', async function(next){
             throw new Error('User not found');
         }
         this.fotoCliente = user.foto
+        this.nameCliente = user.name
         next()
     } catch (error) {
         next(error)
