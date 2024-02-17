@@ -9,7 +9,7 @@ const PropostaSchema = new Schema({
   ofertaInicial: { type: String, required: true },
   ofertaFinal: { type: String, required: true },
   detalhesProposta: { type: String, required: true },
-  status: {type: String},
+  status: {type: String, default: ''},
   droneId: {type: Schema.Types.ObjectId, ref: 'drone'}
 });
 
