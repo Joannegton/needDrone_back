@@ -3,12 +3,20 @@ import { validationSchemaMiddleware } from "../middlewares/validationSchemaMiddl
 import comentarioController from "../controllers/comentarioController.js";
 import { Comentario } from "../schemas/validation/Comentario.js";
 
-const criarComentarioRouter = Router()
+const ComentarioRouter = Router()
 
-criarComentarioRouter.post(
-    "/comentario",
+ComentarioRouter.post(
+    "/comentario/criar",
     validationSchemaMiddleware(Comentario),comentarioController.criarComentario
 )
 
+ComentarioRouter.get(
+    "/comentario",
+    comentarioController.consultarComentario
+)
 
-export default criarComentarioRouter
+
+
+
+
+export default ComentarioRouter

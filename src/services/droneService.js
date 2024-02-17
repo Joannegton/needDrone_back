@@ -11,7 +11,7 @@ async function findByUserId(id){
 }
 
 async function findById(id){
-  if (!id) throw new Error("Usuer not found!")
+  if (!id) throw new Error("Drone not found!")
   return await droneRepository.findById(id)
 }
 
