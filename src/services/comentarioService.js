@@ -5,6 +5,7 @@ async function criarComentario(body){
 }
 
 async function deleteComentario(id){
-    return await comentarioRepository.delete(id)
+    if (!id) throw new Error('Id não encontrado.')
+    return await comentarioRepository.deleteComentario(id)
 }
 export default {criarComentario, deleteComentario}

@@ -31,4 +31,4 @@ async function deleteComentario(req, res){
   }
 }
 
-export default {criarComentario, consultarComentario}
+export default {criarComentario, consultarComentario, deleteComentario}

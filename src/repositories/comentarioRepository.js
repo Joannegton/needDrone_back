@@ -19,7 +19,7 @@ async function findByCliente(clienteId){
 }
 
 async function deleteComentario(id){
-    return await Comentario.deleteById({_id: id})
+    return await Comentario.findByIdAndDelete({_id: id})
 }
 
 export default {create, findAllByUser, findByPiloto, findByCliente, deleteComentario}
