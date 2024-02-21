@@ -4,4 +4,7 @@ async function criarComentario(body){
     return await comentarioRepository.create(body)
 }
 
-export default criarComentario
+async function deleteComentario(id){
+    return await comentarioRepository.delete(id)
+}
+export default {criarComentario, deleteComentario}

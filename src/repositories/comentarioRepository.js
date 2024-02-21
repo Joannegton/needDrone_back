@@ -18,4 +18,8 @@ async function findByCliente(clienteId){
     return user
 }
 
-export default {create, findAllByUser, findByPiloto, findByCliente}
+async function deleteComentario(id){
+    return await Comentario.deleteById({_id: id})
+}
+
+export default {create, findAllByUser, findByPiloto, findByCliente, deleteComentario}

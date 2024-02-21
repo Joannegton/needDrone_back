@@ -17,8 +17,18 @@ async function consultarComentario(req, res) {
       const clientes = await Comentario.find();
       res.json(clientes);
     } catch (error) {
-      res.status(500).json({ error: 'Erro ao recuperar clientes do banco de dados.' });
+      res.status(500).json({ error: 'Erro ao recuperar comentario do banco de dados.' });
     }
   }
+
+async function deleteComentario(req, res){
+  const id = req.params
+  try {
+    const resService = await comentarioService.deleteComentario(id)
+    return res.status(201).send(resService)
+  } catch (error) {
+    res.status(500).json({error: 'Erro ao deletar comentario.'})
+  }
+}
 
 export default {criarComentario, consultarComentario}
