@@ -54,6 +54,15 @@ async function atualizar(req, res){
       console.error(error);
       res.status(500).json({ mensagem: 'Erro interno do servidor' });
     }
-  }
+}
 
-export default {create, findByUserId, findById, findAll, atualizar}
+async function deleted(req, res) {
+    const { id } = req.params //params -> parametros da url
+    try {
+      const pesq = await droneService.deleted(id)
+      return res.status(200).json(pesq);
+    } catch (err) {
+      return res.status(500).json({ error: err.message })
+    }
+  }
+export default {create, findByUserId, findById, findAll, atualizar, deleted}

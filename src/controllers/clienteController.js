@@ -44,6 +44,14 @@ async function update(req, res) {
   }
 }
 
+async function deleted(req, res) {
+  const { id } = req.params //params -> parametros da url
+  try {
+    const pesq = await ClienteService.deleted(id)
+    return res.status(200).json(pesq);
+  } catch (err) {
+    return res.status(500).json({ error: err.message })
+  }
+}
 
-
-export default {criarCliente, findAllUser, findById, update}
+export default {criarCliente, findAllUser, findById, update, deleted}

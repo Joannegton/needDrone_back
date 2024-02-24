@@ -16,4 +16,6 @@ PilotoRouter.get('/piloto/:id', PilotoController.findById)
 
 PilotoRouter.put('/piloto/atualizar/:id', PilotoController.update)
 
+PilotoRouter.delete('/piloto/delete/:id', PilotoController.deleted)
+
 export default PilotoRouter;

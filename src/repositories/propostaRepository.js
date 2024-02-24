@@ -20,4 +20,7 @@ async function update(id, dadosAtualizados){
     return await Proposta.findByIdAndUpdate(id, dadosAtualizados, {new: true})
 }
 
-export default {create, findAll, findById, findByProjectId, update}
+async function deleted(id){
+    return await Proposta.findByIdAndDelete(id)
+}
+export default {create, findAll, findById, findByProjectId, update, deleted}

@@ -18,4 +18,8 @@ async function findById(id){
 async function atualizar(id, dadosAtualizados){
     return await ProjetoSchema.findByIdAndUpdate(id, dadosAtualizados, { new: true })
 }
-export default { create, findAll, findAllByUser, findById, atualizar };
+
+async function deleted(id){
+    return await ProjetoSchema.findByIdAndDelete(id)
+}
+export default { create, findAll, findAllByUser, findById, atualizar, deleted };

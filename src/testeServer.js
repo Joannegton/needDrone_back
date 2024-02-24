@@ -56,7 +56,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCufqi6knwq_11LY0q9n_VkEboyrIdseVI",
+  apiKey: process.env.TOKEN_FIREBASE,
   authDomain: "reactchat-9a511.firebaseapp.com",
   projectId: "reactchat-9a511",
   storageBucket: "reactchat-9a511.appspot.com",

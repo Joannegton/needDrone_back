@@ -12,14 +12,14 @@ ClienteRouter.post(
     ClienteController.criarCliente
 );
 
-// Endpoint para buscar todos os clientes
+
 ClienteRouter.get('/cliente', ClienteController.findAllUser);
 
-// Endpoint para buscar cliente por ID
 ClienteRouter.get('/cliente/:id', ClienteController.findById);
 
-// Endpoint para atualizar cliente
 ClienteRouter.put('/cliente/atualizar/:_id', ClienteController.update);
+
+ClienteRouter.delete('/cliente/delete/:_id', ClienteController.deleted);
 
 
 export default ClienteRouter;

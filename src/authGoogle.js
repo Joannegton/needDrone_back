@@ -18,7 +18,7 @@ const conectar = async (req, res) =>{
             let user = authRepository.findByEmail()
             if(!user){
                 user = authRepository.create()
-                const token = jwt.sign({ user }, "84c2109279e6cde7b262d3c2d1941ec950d006aa7712ddbbc6cd2791aa49c46f");
+                const token = jwt.sign({ user }, process.env.TOKEN_AUTH_GOOGLE);
                 res.status(200).cookie('token', token, { http: true }).json({ payload });
             }
     } catch (error) {

@@ -10,23 +10,23 @@ async function findAllUser(){
 }
 
 async function findById(id){
-    const user = await ClienteSchema.findById({_id: id})
-    return user
+    return await ClienteSchema.findById({_id: id})
 }
 
 async function findByEmail(email){
-    const user = await ClienteSchema.findOne({email})
-    return user
+    return await ClienteSchema.findOne({email})
 }
 
 async function update(id, updateData){
     return await ClienteSchema.findByIdAndUpdate(id, updateData, { new: true })
 }
 
-
+async function deleted(id){
+    return await ClienteSchema.findByIdAndDelete(id)
+}
 
 async function generateToken(id) {
     return jwt.sign({ id }, "84c2109279e6cde7b262d3c2d1941ec950d006aa7712ddbbc6cd2791aa49c46f", { expiresIn: 86400 });
   }
 
-  export default {create,findAllUser,findById, findByEmail, generateToken, update}
+  export default {create,findAllUser,findById, findByEmail, generateToken, update, deleted}

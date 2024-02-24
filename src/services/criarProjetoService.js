@@ -23,4 +23,9 @@ async function atualizar(id, dadosAtualizados){
     return await projetosRepository.atualizar(id, dadosAtualizados)
 }
 
-export default { create, findById, findAll, findAllByUser, atualizar };
+async function deleted(id){
+    if (!id) throw new Error("User id is required");
+  return await projetosRepository.deleted(id);
+}
+
+export default { create, findById, findAll, findAllByUser, atualizar, deleted };

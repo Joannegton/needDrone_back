@@ -20,5 +20,9 @@ async function atualizar(id, dadosAtualizados){
   return await droneRepository.atualizar(id, dadosAtualizados)
 }
 
+async function deleted(id){
+  if (!id) throw new Error("User id is required");
+return await droneRepository.deleted(id);
+}
 
-export default {create, findByUserId, findById, atualizar}
+export default {create, findByUserId, findById, atualizar, deleted}

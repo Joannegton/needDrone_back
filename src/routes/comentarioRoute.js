@@ -16,8 +16,8 @@ ComentarioRouter.get(
 )
 
 ComentarioRouter.delete(
-    "/comentario/:id",
-    comentarioController.consultarComentario
+    "/comentario/delete/:id",
+    comentarioController.deleteComentario
 )
 
 

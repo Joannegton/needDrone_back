@@ -17,4 +17,6 @@ droneRouter.get('/drone/:id', droneController.findById)
 
 droneRouter.put('/drone/atualizar/:_id', droneController.atualizar)
 
+droneRouter.delete('/drone/delete/:_id', droneController.deleted)
+
 export default droneRouter

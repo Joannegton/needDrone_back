@@ -53,6 +53,14 @@ async function update(req, res){
     }
   }
 
+  async function deleted(req, res) {
+    const { id } = req.params //params -> parametros da url
+    try {
+      const pesq = await propostaService.deleted(id)
+      return res.status(200).json(pesq);
+    } catch (err) {
+      return res.status(500).json({ error: err.message })
+    }
+  }
 
-
-export default {criarProposta, findById, findAll, findByProjectId, update}
+export default {criarProposta, findById, findAll, findByProjectId, update, deleted}

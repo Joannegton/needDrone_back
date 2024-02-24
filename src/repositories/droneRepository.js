@@ -19,6 +19,8 @@ async function atualizar(id, dadosAtualizados){
     return await Drone.findByIdAndUpdate(id, dadosAtualizados, { new: true })
 }
 
+async function deleted(id){
+    return await Drone.findByIdAndDelete(id)
+}
 
-
-export default {create, findByUserId, findById, findAll, atualizar}
+export default {create, findByUserId, findById, findAll, atualizar, deleted}

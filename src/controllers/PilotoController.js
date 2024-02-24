@@ -44,4 +44,14 @@ async function update(req, res) {
   }
 }
 
-export default {criarPiloto, findAllUser, findById, update}
+async function deleted(req, res) {
+  const { id } = req.params //params -> parametros da url
+  try {
+    const pesq = await PilotoService.deleted(id)
+    return res.status(200).json(pesq);
+  } catch (err) {
+    return res.status(500).json({ error: err.message })
+  }
+}
+
+export default {criarPiloto, findAllUser, findById, update, deleted}

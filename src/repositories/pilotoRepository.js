@@ -25,6 +25,10 @@ async function update(id, updateData){
 
 async function generateToken(id) {
     return jwt.sign({ id }, "84c2109279e6cde7b262d3c2d1941ec950d006aa7712ddbbc6cd2791aa49c46f", { expiresIn: 86400 });
-  }
+}
 
-export default {create, findAllUser, findById, findByEmail, update, generateToken}
+
+async function deleted(id){
+    return await ClienteSchema.findByIdAndDelete(id)
+}
+export default {create, findAllUser, findById, findByEmail, update, generateToken, deleted}

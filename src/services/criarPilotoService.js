@@ -1,5 +1,6 @@
 import bcrypt from 'bcrypt'
 import criarPilotoRepository from '../repositories/pilotoRepository.js'
+import pilotoRepository from '../repositories/pilotoRepository.js';
 
 async function criarPiloto(body){
     const hasPassword = bcrypt.hashSync(body.password, 10);
@@ -25,4 +26,9 @@ async function update(id, updateData) {
   }
 }
 
-export default {criarPiloto, findById, update}
+async function deleted(id){
+  if (!id) throw new Error("User id is required");
+return await pilotoRepository.deleted(id);
+}
+
+export default {criarPiloto, findById, update, deleted}

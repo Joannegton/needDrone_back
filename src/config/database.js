@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export async function connectDb() {
   try {
-    await mongoose.connect("mongodb+srv://bolacha:key2307@havedrone.ungqybe.mongodb.net/?retryWrites=true&w=majority");
+    await mongoose.connect(process.env.TOKEN_MONGODB);
     console.log("MongoDB Atlas connected!");
   } catch (err) {
     console.log(err.message);

@@ -24,5 +24,9 @@ propostaRouter.get(
     "/proposta/projeto/:projectId",
     propostaController.findByProjectId)
 
+propostaRouter.delete(
+    "/proposta/delete/:projectId",
+    propostaController.deleted)
+
 
 export default propostaRouter

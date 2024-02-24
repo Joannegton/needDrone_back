@@ -21,4 +21,6 @@ projetoRouter.get('/projeto/:id', criarProjetoController.findById)
 
 projetoRouter.put('/projeto/atualizar/:id', criarProjetoController.atualizar)
 
+projetoRouter.delete('/projeto/delete/:id', criarProjetoController.deleted)
+
 export default projetoRouter 

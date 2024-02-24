@@ -27,6 +27,10 @@ async function update(id, updateData) {
 }
 
 
+async function deleted(id){
+  if (!id) throw new Error("User id is required");
+return await ClienteRepository.deleted(id);
+}
 
 
-export default {criarCliente, findById, update}
+export default {criarCliente, findById, update, deleted}
